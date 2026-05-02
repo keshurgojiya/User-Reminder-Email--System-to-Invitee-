@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark">
   <meta name="supported-color-schemes" content="light dark"> 
-  <title>Invitation Expired</title>
+  <title>User Reminder Email (System to Invitee)</title>
 
   <style>
     @media only screen and (max-width:600px) {
@@ -121,93 +121,21 @@
             <td style="padding:24px;">
 
               <p style="margin:0px; font-size:16px; color:#344054; line-height:24px;">
-                Hello {{Inviter Name}}
+                Hello {{UserFirstName}},
               </p>
 
-              <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054;">
-                The invitation sent to {{InviteeFullName}} has expired because the account was not activated within the allowed timeframe.
+              <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054; padding-right: 20px;">
+                This is a reminder to complete the setup of your IronTrac account. <br> Your invitation is still pending and requires your action to activate access.
               </p>
-            </td>
-          </tr>
 
-          <!-- Failure Details Heading -->
-          <tr>
-            <td style="padding:0 24px 8px 24px;">
-              <h2 style="margin:0; font-size:16px; font-weight:600; color:#344054; line-height:24px;">
-                Invitation Details:
-              </h2>
-            </td>
-          </tr>
-
-          <!-- Failure Details -->
-          <tr>
-            <td style="padding:0 24px 0px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-
-                  <!-- RIGHT CARD -->
-                  <td class="mobile-stack" width="50%" valign="top">
-
-                    <table class="dark-mode-border" width="100%" cellpadding="0" cellspacing="0" border="0"
-                      style="border:1px solid #EEEEEE; border-radius:8px;">
-
-                      <!-- Card Header -->
-                      <tr>
-                        <td style="padding:12px;">
-                          <table class="dark-mode-border" width="100%" cellpadding="0" cellspacing="0" border="0"
-                            style="border-bottom:1px solid #eeeeee; padding-bottom:12px;">
-                            <tr>
-                              <td class="dark-mode-eeeeee"style="font-size:12px; line-height: 18px; font-weight: 400; color:#4f4f4f;">
-                                Invitee Name
-                              </td>
-                              <td class="dark-mode-f5f5f5" align="right" style="font-size:12px; line-height: 18px; font-weight: 500; color:#333333;">
-                                {{InviteeName}}
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-
-                      <!-- Card Body -->
-                      <tr>
-                        <td style="padding:12px; padding-top:0;
-                                  font-size:12px; color:#4f4f4f; line-height:18px;">
-                          <table width="100%">
-                            <tr>
-                              <td class="dark-mode-eeeeee" style="padding-bottom:8px; width: 140px;">Invitee Email</td>
-                              <td class="dark-mode-f5f5f5" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
-                                {{Invitee Email}}
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="dark-mode-eeeeee" style="padding-bottom:8px; width: 140px;">Invitation Sent On</td>
-                              <td class="dark-mode-f5f5f5" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
-                               {{InvitationSentDate}}
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="dark-mode-eeeeee" style="padding-bottom:8px; width: 140px;">Expiration Date</td>
-                              <td class="dark-mode-f5f5f5" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
-                                {{ExpirationDate}}
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-
-                    </table>
-                  </td>
-
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="padding:24px;">
-              <p style="margin:0px; font-size:16px; line-height:24px; color:#344054; font-weight: 400;">
-                To grant access, you will need to resend a new invitation. Expired invitations cannot be reactivated.
+              <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054; padding-right: 20px;">
+                To proceed, please click the link below and finish setting up your account: <span class="blue-links" style="color: #175FFF !important;">{{Activation Link}}</span>
               </p>
+
+              <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054; padding-right: 20px;">
+                Please note that this invitation will expire on <span class="blue-links" style="color: #175FFF !important;">{{ExpirationDate}}</span>.  If the invitation expires before activation is completed, you will need to request a new invitation from your administrator.
+              </p>
+              
             </td>
           </tr>
 
@@ -218,8 +146,8 @@
                        font-size:14px;
                        color:#667085;
                        line-height:20px;">
-              If you need to make any changes to the user’s access or require assistance, please contact the IronTrac support team at 
-              <a href="#" style="color:#175FFF; text-decoration:none;">
+              If you believe you have received this email in error or need assistance, please contact the IronTrac support team at 
+              <a class="blue-links" href="#" style="color:#175FFF !important; text-decoration:none;">
                 {{support_email}}
               </a>
             </td>
